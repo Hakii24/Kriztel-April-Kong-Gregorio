@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	<title>Palindrome Checker</title>
+</head>
+
+ <div class="">
+        <p>Kriztel April Kong Gregorio&nbsp;&nbsp;&nbsp;IV BS MATH CIT</p>
+    </div>
+
+<script type="text/javascript" >
+	function palindrome(str)
+	{
+		var re = /[^A-Za-z0-9]/g;
+		str = str.toLowerCase().replace(re, '');
+		var len = str.length;
+		for (var i = 0; i < len/2; i++)
+		{
+			if (str[i] !== str[len - 1 - i])
+			{
+				return "It is not a palindrome.";
+			}
+		}
+		return "It is a palindrome.";
+	};
+	
+	function Answer()
+	{ 
+		let str = document.getElementById("String").value;
+		let ans = palindrome(str);
+		document.getElementById("Answer").innerHTML = ans;
+	};
+</script>
+<style>
+	html{
+		background-color: #87CEFA;
+		text-align: center;
+	}
+</style>
+<body>
+<h1><center>Palindrome</center></h1>
+	
+<fieldset>
+	<label for="Name">&emsp;Word to check:</label>
+	<input type="text" id="String" name="String"><br><br>
+	<label for="Answer1">Answer:</label>
+	<p id = "Answer"></p><br><br>
+	<input type = "button"
+	value = "Check"
+	onClick = "javascript:Answer()">
+</fieldset>
+
+</body>
